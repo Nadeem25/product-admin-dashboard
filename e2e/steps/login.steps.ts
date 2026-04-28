@@ -26,6 +26,12 @@ Then('I should be redirected to the dashboard', async ({ page }) => {
     await expect(page.getByTestId('dashboard-title')).toHaveText('Dashboard');
 });
 
+// --- Old Code ---------------------
+// Then('I should see an error message', async ({ page }) => {
+//     await expect(page.getByTestId('login-error')).toHaveText('Invalid Credentials');
+// });
+
+// -------- New Code -------
 Then('I should see an error message', async ({ page }) => {
-    await expect(page.getByTestId('login-error')).toHaveText('Invalid Credentials');
+    await expect(page.getByTestId('login-error')).toHaveText('Invalid credentials');
 });
