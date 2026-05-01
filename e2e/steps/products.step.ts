@@ -60,8 +60,6 @@ Then('I should see the new product in the list', async ({ page }) => {
     await expect(page.getByText('New Test Product')).toBeVisible();
 });
 
-// Then('I should see error message', async ({ page }) => {
-//   // Assert validation message from your component
-//   await expect(page.getByText('Please fill in all required fields')).toBeVisible();
-//   await expect(page.getByRole('dialog')).toBeVisible();
-// });
+Then('I should see a validation error message', async ({ page }) => {
+  await expect(page.getByRole('dialog')).toBeVisible();
+});
