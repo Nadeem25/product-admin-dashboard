@@ -19,7 +19,7 @@ describe('Products Page', () => {
             data: { data: [{ id: '1', name: 'Awesome Product', price: 99.99, category: 'Tech', description: 'A great product' }] },
             isLoading: false,
             error: null,
-        } as any);
+        } as unknown);
 
         render(
             <QueryClientProvider client={queryClient}>
@@ -37,7 +37,7 @@ describe('Products Page', () => {
             data: { data: [] },
             isLoading: false,
             error: null,
-        } as any);
+        } as unknown);
 
         render(
             <QueryClientProvider client={queryClient}>
