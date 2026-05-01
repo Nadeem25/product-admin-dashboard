@@ -28,12 +28,17 @@ When('I click the add product button', async ({ page }) => {
     await page.getByTestId('add-product-button').click();
 });
 
+Then('Dialog form should open', async ({ page }) => {
+  await expect(page.getByRole('dialog')).toBeVisible();
+});
+
 When('I fill in the product form with valid details', async ({ page }) => {
     await page.getByTestId('product-name-input').locator('input').fill('New Test Product');
     await page.getByTestId('product-price-input').locator('input').fill('99.99');
     await page.getByTestId('product-category-input').locator('input').fill('Electronics');
     await page.getByTestId('product-description-input').locator('textarea').first().fill('A great new product.');
 });
+
 
 When('I click save product', async ({ page }) => {
     // Mock the POST and the refetch GET request so we see the product we just added
@@ -54,3 +59,9 @@ Then('I should see the new product in the list', async ({ page }) => {
     await expect(page.getByRole('dialog')).not.toBeVisible();
     await expect(page.getByText('New Test Product')).toBeVisible();
 });
+
+// Then('I should see error message', async ({ page }) => {
+//   // Assert validation message from your component
+//   await expect(page.getByText('Please fill in all required fields')).toBeVisible();
+//   await expect(page.getByRole('dialog')).toBeVisible();
+// });
