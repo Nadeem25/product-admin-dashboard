@@ -110,7 +110,7 @@ const Products: React.FC = () => {
           mb: 3,
         }}
       >
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           Products
         </Typography>
         <Button

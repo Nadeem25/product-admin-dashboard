@@ -22,13 +22,13 @@ let products = [...mockProducts];
 export const db = {
   getUsers: () => users,
   addUser: (user: unknown) => {
-    const newUser = { ...user, id: faker.string.uuid() };
+    const newUser = { ...(user ?? {}), id: faker.string.uuid() };
     users = [newUser, ...users];
     return newUser;
   },
   getProducts: () => products,
   addProduct: (product: unknown) => {
-    const newProduct = { ...product, id: faker.string.uuid() };
+    const newProduct = { ...(product ?? {}), id: faker.string.uuid() };
     products = [newProduct, ...products];
     return newProduct;
   },

@@ -18,7 +18,7 @@ const StatCard: React.FC<{ title: string; value: string; icon: React.ReactNode; 
             <Typography variant="body2" color="text.secondary">
                 {title}
             </Typography>
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                 {value}
             </Typography>
         </Box>
@@ -28,17 +28,17 @@ const StatCard: React.FC<{ title: string; value: string; icon: React.ReactNode; 
 const Dashboard: React.FC = () => {
     return (
         <Box>
-            <Typography variant="h4" gutterBottom fontWeight="bold" data-testid="dashboard-title">
+            <Typography variant="h4" gutterBottom  sx={{ fontWeight: 'bold' }} data-testid="dashboard-title">
                 Dashboard
             </Typography>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid xs={12} sm={6} md={3}>
                     <StatCard title="Total Users" value="1,234" icon={<PeopleIcon />} color="#1976d2" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid xs={12} sm={6} md={3}>
                     <StatCard title="Total Products" value="567" icon={<ShoppingCartIcon />} color="#2e7d32" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid xs={12} sm={6} md={3}>
                     <StatCard title="Sales Growth" value="+12.5%" icon={<TrendingUpIcon />} color="#ed6c02" />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
