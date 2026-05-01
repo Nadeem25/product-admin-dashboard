@@ -24,7 +24,7 @@ const Users: React.FC = () => {
   const queryClient = useQueryClient();
   const { data: response, isLoading, error } = useGetUsers();
   const users = response?.data;
-  const currentUser = "Test";
+  //const currentUser = "Test"; // Unused Variable
 
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
